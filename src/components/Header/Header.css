@@ -1,4 +1,7 @@
-.header {
-    background-color: black;
+.navbar {
+    background-color: rgb(12, 193, 224);
     color: white;
+    margin-top: 0px;
+    padding: 20px;
+    box-shadow: 0 7px 10px rgba(0,0,0,.22);
 }
