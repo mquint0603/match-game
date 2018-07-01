@@ -8,50 +8,76 @@ import GameArea from './components/GameArea'
 class App extends Component {
 
   imageArray = [
-    {url: "/dwightYell.jpg", alt: "Dwight"},
-    {url: "/michaelShrug.jpg", alt: "Michael"},
-    {url: "/jim.jpg", alt: "Jim"},
-    {url: "/andy.jpg", alt: "Andy"},
-    {url: "/angela.jpg", alt: "Angela"},
-    {url: "/meredith.jpg", alt: "Meredith"},
-    {url: "/pam.jpg", alt: "Pam"},
-    {url: "/phyllis.jpg", alt: "Phyllis"},
-    {url: "/stanley.jpg", alt: "Stanley"},
+    {url: "/images/dwightYell.jpg", alt: "Dwight Yell"},
+    {url: "/images/michaelShrug.jpg", alt: "Michael Shrug"},
+    {url: "/images/jim.jpg", alt: "Jim"},
+    {url: "/images/andy.jpg", alt: "Andy"},
+    {url: "/images/angela.jpg", alt: "Angela"},
+    {url: "/images/meredith.jpg", alt: "Meredith"},
+    {url: "/images/pam.jpg", alt: "Pam"},
+    {url: "/images/phyllis.jpg", alt: "Phyllis"},
+    {url: "/images/stanley.jpg", alt: "Stanley"},
+    {url: "/images/creed.jpg", alt: "Creed"},
+    {url: "/images/dwight.jpg", alt: "Dwight"},
+    {url: "/images/erin2.jpg", alt: "Erin 2"},
+    {url: "/images/jan.jpg", alt: "jan"},
+    {url: "/images/kelly.jpg", alt: "Kelly"},
+    {url: "/images/kevin.jpg", alt: "Kevin"},
+    {url: "/images/michael.jpg", alt: "Michael"},
+    {url: "/images/ryan.jpg", alt: "Ryan"},
+    {url: "/images/toby.jpg", alt: "Toby"},
+    {url: "/images/erin.jpg", alt: "Erin"}
   ]
 
   state = {
     images: this.imageArray,
     alreadyClicked: ["Stanley"],
     score: 0,
-    headerMessage: "Click an image to begin"
+    topScore: 0,
+    headerMessage: "Click an image to begin",
+    imgHolderClass: ""
   }
 
-  // shuffle = () => {
-  //   randomize and then set state/rerender  
-  // ** set state.images to only first 12 indices of imageArray
-  // }
+  shuffle = (array) => {
+    let i = array.length, temp, x;
+
+    while (i) {
+        x = Math.floor(Math.random() * i--);
+        temp = array[i];
+        array[i] = array[x];
+        array[x] = temp;
+    }
+    // return array;
+    this.setState({images: array})
+  }
 
   checkImg = (alt) => {
     console.log(alt)
     if (this.state.alreadyClicked.includes(alt)){
       console.log("You clicked this already")
-      this.setState({score: 0, alreadyClicked: []})
+      this.setState({score: 0, alreadyClicked: [], headerMessage: "Whoops!", imgHolderClass: "shake"})
+
       // update score and headerMessage based on result
     } else {
       this.state.alreadyClicked.push(alt)
       console.log("added to clicked array")
       const newState = { ...this.state };
       newState.score += 1
-      this.setState({score: newState.score})
+
+      if(newState.score > this.state.topScore){
+        this.setState({score: newState.score, headerMessage: "Nice!", topScore: newState.score, imgHolderClass: "na"})
+      } else {
+        this.setState({score: newState.score, headerMessage: "Nice!", imgHolderClass: "na"})
+      }
     }
   }
 
 
-  // handleClick = (alt) => {
-      // checkImg(alt)
-      // shuffle... after like 2 seconds?
+  handleClick = (alt) => {
+      this.checkImg(alt)
+      this.shuffle(this.state.images)
 
-  // }
+  }
 
 
   render() {
@@ -60,18 +86,20 @@ class App extends Component {
         <Header
            message= {this.state.headerMessage}
            score= {this.state.score}
+           topScore= {this.state.topScore}
         />
         <Jumbotron/>
 
         <div className="container">
             <div className="row">
-                {this.state.images.map(image => (
+                {this.state.images.slice(0,12).map(image => (
                     
                   <GameArea
                     key = {image.alt}
                     alt = {image.alt}
                     url = {image.url}
-                    checkImg = {this.checkImg}
+                    checkImg = {this.handleClick}
+                    shake= {this.state.imgHolderClass}
                   />
 
                 ))}

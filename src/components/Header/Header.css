@@ -1,7 +1,21 @@
 .navbar {
-    background-color: rgb(12, 193, 224);
+    /* background-color: rgb(236, 234, 234); */
+    background-color: rgb(8, 100, 175);
     color: white;
+    
+    
     margin-top: 0px;
     padding: 20px;
     box-shadow: 0 7px 10px rgba(0,0,0,.22);
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 1.8em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h4 {
+    font-weight: 200;
+    font-size: 1.4em;
 }
