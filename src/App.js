@@ -8,8 +8,8 @@ import GameArea from './components/GameArea'
 class App extends Component {
 
   imageArray = [
-    {url: "/images/dwightYell.jpg", alt: "Dwight Yell"},
-    {url: "/images/michaelShrug.jpg", alt: "Michael Shrug"},
+    {url: "build/images/dwightYell.jpg", alt: "Dwight Yell"},
+    {url: "build/images/michaelShrug.jpg", alt: "Michael Shrug"},
     {url: "/images/jim.jpg", alt: "Jim"},
     {url: "/images/andy.jpg", alt: "Andy"},
     {url: "/images/angela.jpg", alt: "Angela"},
