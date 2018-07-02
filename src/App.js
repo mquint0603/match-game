@@ -8,25 +8,25 @@ import GameArea from './components/GameArea'
 class App extends Component {
 
   imageArray = [
-    {url: "../assets/images/dwightYell.jpg", alt: "Dwight Yell"},
-    {url: "../assets/images/michaelShrug.jpg", alt: "Michael Shrug"},
+    {url: "./assets/images/dwightYell.jpg", alt: "Dwight Yell"},
+    {url: "./assets/images/michaelShrug.jpg", alt: "Michael Shrug"},
     {url: "/assets/images/jim.jpg", alt: "Jim"},
-    {url: "./andy.jpg", alt: "Andy"},
-    {url: "/assets/images/angela.jpg", alt: "Angela"},
-    {url: "/assets/images/meredith.jpg", alt: "Meredith"},
-    {url: "/assets/images/pam.jpg", alt: "Pam"},
-    {url: "/assets/images/phyllis.jpg", alt: "Phyllis"},
-    {url: "/assets/images/stanley.jpg", alt: "Stanley"},
-    {url: "/assets/images/creed.jpg", alt: "Creed"},
-    {url: "/assets/images/dwight.jpg", alt: "Dwight"},
-    {url: "/assets/images/erin2.jpg", alt: "Erin 2"},
-    {url: "/assets/images/jan.jpg", alt: "jan"},
-    {url: "/assets/images/kelly.jpg", alt: "Kelly"},
-    {url: "/assets/images/kevin.jpg", alt: "Kevin"},
-    {url: "/assets/images/michael.jpg", alt: "Michael"},
-    {url: "/assets/images/ryan.jpg", alt: "Ryan"},
-    {url: "/assets/images/toby.jpg", alt: "Toby"},
-    {url: "/assets/images/erin.jpg", alt: "Erin"}
+    {url: "./assets/images/andy.jpg", alt: "Andy"},
+    {url: "./assets/images/angela.jpg", alt: "Angela"},
+    {url: "./assets/images/meredith.jpg", alt: "Meredith"},
+    {url: "./assets/images/pam.jpg", alt: "Pam"},
+    {url: "./assets/images/phyllis.jpg", alt: "Phyllis"},
+    {url: "./assets/images/stanley.jpg", alt: "Stanley"},
+    {url: "./assets/images/creed.jpg", alt: "Creed"},
+    {url: "./assets/images/dwight.jpg", alt: "Dwight"},
+    {url: "./assets/images/erin2.jpg", alt: "Erin 2"},
+    {url: "./assets/images/jan.jpg", alt: "jan"},
+    {url: "./assets/images/kelly.jpg", alt: "Kelly"},
+    {url: "./assets/images/kevin.jpg", alt: "Kevin"},
+    {url: "./assets/images/michael.jpg", alt: "Michael"},
+    {url: "./assets/images/ryan.jpg", alt: "Ryan"},
+    {url: "./assets/images/toby.jpg", alt: "Toby"},
+    {url: "./assets/images/erin.jpg", alt: "Erin"}
   ]
 
   state = {
