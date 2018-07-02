@@ -3,12 +3,12 @@
     background-image: url(./paper.jpg);
     background-size: 100% auto;
     background-repeat: none;
-    padding-top: 170px;
+    padding-top: 110px;
 
 }
 
 @media only screen and (max-width: 421px) {
 .jumbotron{
-    padding-top: 240px;
+    padding-top: 180px;
 }
 }
